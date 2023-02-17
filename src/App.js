@@ -39,7 +39,7 @@ const App = () => {
         <AppRoot>
           <SplitLayout popout={popout}>
             <SplitCol>
-              <View activePanel={"home"}>
+              <View activePanel={activePanel}>
                 <Home id="home" go={go} />
                 <Creator id="creator" go={go} />
                 <Customer id="customer" go={go} />
