@@ -5,7 +5,7 @@ import { Panel, PanelHeader, Header, Button, Group, Cell, Div, Avatar } from '@v
 
 const Home = ({ id, go}) => (
 	<Panel id={id}>
-		<PanelHeader>Example</PanelHeader>
+		<PanelHeader>5bit cool proga</PanelHeader>
 	</Panel>
 );
 
