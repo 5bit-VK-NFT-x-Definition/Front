@@ -4,11 +4,10 @@ import { View, ScreenSpinner, AdaptivityProvider, AppRoot, ConfigProvider, Split
 import '@vkontakte/vkui/dist/vkui.css';
 
 import Home from './panels/Home';
-import Persik from './panels/Persik';
 
 const App = () => {
 	const [activePanel, setActivePanel] = useState('home');
-	const [fetchedUser, setUser] = useState(null);
+	const [setUser] = useState(null);
 	const [popout, setPopout] = useState(<ScreenSpinner size='large' />);
 
 	useEffect(() => {
@@ -31,8 +30,7 @@ const App = () => {
 					<SplitLayout popout={popout}>
 						<SplitCol>
 							<View activePanel={activePanel}>
-								<Home id='home' fetchedUser={fetchedUser} go={go} />
-								<Persik id='persik' go={go} />
+								<Home id='home' go={go} />								
 							</View>
 						</SplitCol>
 					</SplitLayout>
