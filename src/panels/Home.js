@@ -16,6 +16,10 @@ import CustomPanelHeader from "../components/CustomPanelHeader/CustomPanelHeader
 const Home = ({ id, go }) => (
   <Panel id={id}>
     <CustomPanelHeader />
+    <Div>
+      <Button>Creator</Button>
+      <Button>Customer</Button>
+    </Div>
   </Panel>
 );
 

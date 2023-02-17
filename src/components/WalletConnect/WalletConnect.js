@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { ethers } from "ethers";
 import "./WalletConnect.css";
 
 import { Button } from "@vkontakte/vkui";
@@ -11,11 +10,7 @@ const WalletConnect = () => {
     console.log("test");
   };
 
-  return (
-    <Button mode="primary" onClick={() => setButtonText("123")}>
-      {buttonText}
-    </Button>
-  );
+  return <button onClick={() => setButtonText("onClick")}>{buttonText}</button>;
 };
 
 export default WalletConnect;
