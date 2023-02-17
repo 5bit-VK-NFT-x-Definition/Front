@@ -12,14 +12,15 @@ import {
   Avatar,
 } from "@vkontakte/vkui";
 
-const Home = ({ id, go }) => (
+const Customer = ({ id, go }) => (
   <Panel id={id}>
-    <PanelHeader>Home</PanelHeader>
+    <PanelHeader>Customer</PanelHeader>
+    abc
   </Panel>
 );
 
-Home.propTypes = {
+Customer.propTypes = {
   id: PropTypes.string.isRequired,
 };
 
-export default Home;
+export default Customer;
