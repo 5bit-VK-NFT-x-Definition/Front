@@ -11,10 +11,13 @@ import {
   Div,
   Avatar,
 } from "@vkontakte/vkui";
+import CustomPanelHeader from "../components/CustomPanelHeader/CustomPanelHeader";
 
 const Home = ({ id, go }) => (
   <Panel id={id}>
-    <PanelHeader>Home</PanelHeader>
+    {/* <PanelHeader>Home</PanelHeader> */}
+    <CustomPanelHeader />
+    abc
   </Panel>
 );
 
