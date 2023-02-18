@@ -14,10 +14,10 @@ import {
   Input,
   Checkbox,
   Button,
-  Link,
   DateInput,
   ChipsInput,
-  PanelHeaderBack
+  PanelHeaderBack,
+  Gallery,
 } from "@vkontakte/vkui";
 
 const Creator = ({ id, go, onBackClick }) => {
@@ -26,6 +26,8 @@ const Creator = ({ id, go, onBackClick }) => {
   const [eventDate, setEventDate] = useState(() => new Date());
   const [eventAddresses, setEventAddresses] = useState([]);
   const [publish, setPublish] = useState(false);
+
+  const [slideIndex, setSlideIndex] = useState(1);
 
   const submit = async () => {
     try {
@@ -101,6 +103,28 @@ const Creator = ({ id, go, onBackClick }) => {
         >
           Опубликовать событие
         </Checkbox>
+
+        <Gallery
+          slideWidth="90%"
+          align="center"
+          slideIndex={slideIndex}
+          onChange={setSlideIndex}
+          isDraggable={true}
+          showArrows={true}
+        >
+          <img
+            src="https://43c1-176-52-77-82.ngrok.io/images/1.jpeg"
+            height="300"
+          />
+          <img
+            src="https://43c1-176-52-77-82.ngrok.io/images/2.jpeg"
+            height="300"
+          />
+          <img
+            src="https://43c1-176-52-77-82.ngrok.io/images/3.jpeg"
+            height="300"
+          />
+        </Gallery>
         <FormItem>
           <Button size="s" stretched onClick={submit}>
             Создать событие
