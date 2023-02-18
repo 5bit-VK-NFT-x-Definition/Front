@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import { Panel, Button, Div } from "@vkontakte/vkui";
-import CustomPanelHeaderCustomer from "../components/CustomPanelHeaderCustomer/CustomPanelHeaderCustomer";
+import CustomPanelHeader from "../components/CustomPanelHeader/CustomPanelHeader";
 import CheckCard from "../components/CheckCard/CheckCard";
 
 import {
@@ -24,7 +24,7 @@ const Customer = ({ id, go }) => (
   <Panel id={"Customer"}>
     <CustomPanelHeader name={"Content Consumer"} />
     <PanelHeaderBack onClick={go} data-to="home" />
-    <CheckCard/>
+    <CheckCard />
   </Panel>
 );
 

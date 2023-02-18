@@ -4,7 +4,7 @@ import "./ClaimCard.css";
 
 import WhitelistNFT from "../../data/WhitelistNFT";
 
-import { Panel, Button, Div, CardGrid, Card, Group, } from "@vkontakte/vkui";
+import { Panel, Button, Div, CardGrid, Card, Group } from "@vkontakte/vkui";
 
 const ClaimCard = ({ address }) => {
   const onClaimHandler = async () => {
@@ -18,9 +18,9 @@ const ClaimCard = ({ address }) => {
 
   return (
     <Card mode="shadow" className="mycard">
-      <label>NFT Event Name</label>
+      <label> NFT Event Name</label>
       <br />
-      <label>Address</label>
+      <label> Address</label>
       <br />
       <Button onClick={onClaimHandler} className="add">
         Claim
