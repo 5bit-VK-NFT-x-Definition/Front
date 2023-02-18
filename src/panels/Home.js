@@ -5,6 +5,7 @@ import "./Home.css";
 import { Panel, Button, Div } from "@vkontakte/vkui";
 import CustomPanelHeader from "../components/CustomPanelHeader/CustomPanelHeader";
 import ShopWindow from "../components/ShopWindow/ShopWindow";
+import ClaimCard from "../components/ClaimCard/ClaimCard";
 
 const Home = ({ id, go }) => (
   <Panel id={id}>
@@ -19,7 +20,7 @@ const Home = ({ id, go }) => (
       </Button>
     </Div>
     <hr />
-    <ShopWindow />
+    <ShopWindow object={<ClaimCard />} />
   </Panel>
 );
 

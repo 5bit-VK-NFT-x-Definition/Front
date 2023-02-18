@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { ethers } from "ethers";
-import "./ClaimCard.css";
 
 import WhitelistNFT from "../../data/WhitelistNFT";
 

@@ -4,18 +4,16 @@ import "./ShopWindow.css";
 import { Panel, Button, Div, CardGrid, Card, Group } from "@vkontakte/vkui";
 import ClaimCard from "../ClaimCard/ClaimCard";
 
-const ShopWindow = () => {
+const ShopWindow = ({ object }) => {
   return (
     <Group>
       <CardGrid size="s">
-        <ClaimCard />
-        <ClaimCard />
-        <ClaimCard />
+        {object}
+        {object}
       </CardGrid>
       <CardGrid size="s">
-        <ClaimCard />
-        <ClaimCard />
-        <ClaimCard />
+        {object}
+        {object}
       </CardGrid>
     </Group>
   );
