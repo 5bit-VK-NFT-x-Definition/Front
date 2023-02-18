@@ -2,8 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./Home.css";
 
-import { Panel, Button, Div, CardGrid, Card, Group } from "@vkontakte/vkui";
+import { Panel, Button, Div } from "@vkontakte/vkui";
 import CustomPanelHeader from "../components/CustomPanelHeader/CustomPanelHeader";
+import ShopWindow from "../components/ShopWindow/ShopWindow";
 
 const Home = ({ id, go }) => (
   <Panel id={id}>
@@ -18,19 +19,7 @@ const Home = ({ id, go }) => (
       </Button>
     </Div>
     <hr />
-    <Group>
-      <CardGrid size="s">
-        <Card>
-          <div style={{ paddingBottom: "92%" }} />
-        </Card>
-        <Card>
-          <div style={{ paddingBottom: "92%" }} />
-        </Card>
-        <Card>
-          <div style={{ paddingBottom: "92%" }} />
-        </Card>
-      </CardGrid>
-    </Group>
+    <ShopWindow />
   </Panel>
 );
 
