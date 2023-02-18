@@ -5,10 +5,6 @@ import "./WatchCard.css";
 import { Panel, Button, Div, CardGrid, Card, Group } from "@vkontakte/vkui";
 
 const WatchCard = ({ event, index }) => {
-  const onWatchHandler = async () => {
-    // Check success
-  };
-
   return (
     <Card mode="shadow" key={index}>
       <div
@@ -26,9 +22,6 @@ const WatchCard = ({ event, index }) => {
         <div className="topright">
           <label>{event.title}</label>
           <label> {event.description}</label>
-        </div>
-        <div className="bottomright">
-          <Button onClick={onWatchHandler}>Claim</Button>
         </div>
       </div>
     </Card>

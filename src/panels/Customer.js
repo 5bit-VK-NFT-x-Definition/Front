@@ -18,8 +18,13 @@ const Customer = ({ id, go }) => {
   const [events, setEvents] = useState([]);
   const loadEvents = async () => {
     try {
+      const user = (
+        await window.ethereum.request({ method: "eth_requestAccounts" })
+      )[0];
+
       const response = await axios.post(
-        "https://2cd5-176-52-77-82.ngrok.io/v1/events/getAll",
+        `https://2cd5-176-52-77-82.ngrok.io/v1/user/getAllNfts`,
+        { owner_adress: user },
         {
           headers: {
             "Content-Type": "application/json",
@@ -27,7 +32,7 @@ const Customer = ({ id, go }) => {
         }
       );
 
-      setEvents(response.data.data);
+      console.log(response.data);
     } catch (error) {
       console.error(error);
     }
