@@ -69,7 +69,7 @@ const Creator = ({ id, go, onBackClick }) => {
 
   return (
     <Panel id={id}>
-      <CustomPanelHeaderCustomer name="Content Producer" />
+      <CustomPanelHeader name="Content Producer" />
       <PanelHeaderBack onClick={go} data-to="home" />
       <FormLayout>
         <FormItem top="Название события">

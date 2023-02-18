@@ -8,7 +8,7 @@ import ShopWindow from "../components/ShopWindow/ShopWindow";
 
 const Home = ({ id, go }) => (
   <Panel id={id}>
-    <CustomPanelHeader />
+    <CustomPanelHeader name={"Home"} />
 
     <Div className="homechoices">
       <Button stretched onClick={go} data-to="creator">
