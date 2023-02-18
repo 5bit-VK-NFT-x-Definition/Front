@@ -16,7 +16,7 @@ import {
 const CustomPanelHeader = () => {
   return (
     <panel id ="Customer">
-        <PanelHeader before={<PanelHeaderBack onClick={() => setActiveView('home')} />}>
+        <PanelHeader before={<PanelHeaderBack onClick={"home"} />}>
             VK NFT-билеты Definition
         </PanelHeader>
     </panel>
