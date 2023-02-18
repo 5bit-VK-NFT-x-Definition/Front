@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+import axios from "axios";
+import { ethers } from "ethers";
+
+import WhitelistNFT from "../data/WhitelistNFT";
 
 import CustomPanelHeader from "../components/CustomPanelHeader/CustomPanelHeader";
 
@@ -22,12 +26,41 @@ const Creator = ({ id, go, onBackClick }) => {
   const [eventAddresses, setEventAddresses] = useState([]);
   const [publish, setPublish] = useState(false);
 
-  const submit = () => {
-    console.log(eventName);
-    console.log(eventDescription);
-    console.log(eventDate);
-    console.log(eventAddresses);
-    console.log(publish);
+  const submit = async () => {
+    try {
+      const response = await axios.post(
+        "https://43c1-176-52-77-82.ngrok.io/v1/events/getAll",
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      const total = response.data.meta.total;
+
+      const provider = new ethers.providers.Web3Provider(window.ethereum);
+      const signer = provider.getSigner();
+
+      const contractFactory = await new ethers.ContractFactory(
+        WhitelistNFT.abi,
+        WhitelistNFT.bytecode,
+        signer
+      );
+
+      const contract = await contractFactory.deploy(
+        "VKTicket",
+        "VKT",
+        total + 1,
+        "https://43c1-176-52-77-82.ngrok.io/v1",
+        eventAddresses.map((x) => x.value),
+        publish
+      );
+
+      console.log("https://goerli.etherscan.io/address/" + contract.address);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
