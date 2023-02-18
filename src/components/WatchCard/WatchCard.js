@@ -4,24 +4,35 @@ import "./WatchCard.css";
 
 import { Panel, Button, Div, CardGrid, Card, Group } from "@vkontakte/vkui";
 
-const CardLib = () => {
-  const onCheckHandler = async () => {
+const WatchCard = ({ event }) => {
+  const onWatchHandler = async () => {
     // Check success
   };
 
   return (
-    <Card mode="shadow">
-      <div className="fathercard">
+    <Card mode="shadow" key={index}>
+      <div
+        style={{
+          backgroundImage: `url(${event.img})`,
+          backgroundSize: "cover",
+          display: "flex",
+          "flex-direction": "column",
+          "justify-content": "space-between",
+          "align-items": "flex-end",
+          height: "150px",
+          width: "340px",
+        }}
+      >
         <div className="topright">
-          <label> NFT Event Name</label>
-          <label> Address</label>
+          <label>{event.title}</label>
+          <label> {event.description}</label>
         </div>
         <div className="bottomright">
-          <Button onClick={onCheckHandler}>Claim</Button>
+          <Button onClick={onWatchHandler}>Claim</Button>
         </div>
       </div>
     </Card>
   );
 };
 
-export default CardLib;
+export default WatchCard;

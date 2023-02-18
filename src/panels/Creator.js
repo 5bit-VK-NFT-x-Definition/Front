@@ -85,8 +85,6 @@ const Creator = ({ id, go, onBackClick }) => {
           },
         }
       );
-
-      console.log(response2);
     } catch (error) {
       console.error(error);
     }

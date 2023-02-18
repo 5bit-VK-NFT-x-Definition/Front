@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import "./Home.css";
 
@@ -6,23 +6,54 @@ import { Panel, Button, Div } from "@vkontakte/vkui";
 import CustomPanelHeader from "../components/CustomPanelHeader/CustomPanelHeader";
 import ShopWindow from "../components/ShopWindow/ShopWindow";
 import ClaimCard from "../components/ClaimCard/ClaimCard";
+import axios from "axios";
 
-const Home = ({ id, go }) => (
-  <Panel id={id}>
-    <CustomPanelHeader name={"Home"} />
+const Home = ({ id, go }) => {
+  const [events, setEvents] = useState([]);
 
-    <Div className="homechoices">
-      <Button stretched onClick={go} data-to="creator">
-        Content Producer
-      </Button>
-      <Button stretched className="rightchoice" onClick={go} data-to="customer">
-        Content Consumer
-      </Button>
-    </Div>
-    <hr />
-    <ShopWindow object={<ClaimCard />} />
-  </Panel>
-);
+  const loadEvents = async () => {
+    try {
+      const response = await axios.post(
+        "https://2cd5-176-52-77-82.ngrok.io/v1/events/getAll",
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      setEvents(response.data.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    loadEvents();
+  }, []);
+
+  return (
+    <Panel id={id}>
+      <CustomPanelHeader name={"Home"} />
+
+      <Div className="homechoices">
+        <Button stretched onClick={go} data-to="creator">
+          Content Producer
+        </Button>
+        <Button
+          stretched
+          className="rightchoice"
+          onClick={go}
+          data-to="customer"
+        >
+          Content Consumer
+        </Button>
+      </Div>
+      <hr />
+      <ShopWindow object={<ClaimCard />} events={events} />
+    </Panel>
+  );
+};
 
 Home.propTypes = {
   id: PropTypes.string.isRequired,
