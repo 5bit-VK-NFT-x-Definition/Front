@@ -11,41 +11,63 @@ import {
   Checkbox,
   Button,
   Link,
+  DateInput,
+  ChipsInput,
 } from "@vkontakte/vkui";
 
 const Creator = ({ id, go, onBackClick }) => {
   const [eventName, setEventName] = useState("");
   const [eventDescription, setEventDescription] = useState("");
-  const [eventDate, setEventDate] = useState("");
-  const [eventAddress, setEventAddress] = useState("");
+  const [eventDate, setEventDate] = useState(() => new Date());
+  const [eventAddresses, setEventAddresses] = useState([]);
+  const [publish, setPublish] = useState(false);
+
+  const submit = () => {
+    console.log(eventName);
+    console.log(eventDescription);
+    console.log(eventDate);
+    console.log(eventAddresses);
+    console.log(publish);
+  };
 
   return (
     <Panel id={id}>
       <CustomPanelHeader name="Content Producer" />
       <FormLayout>
         <FormItem top="Название события">
-          <Input
-            value={eventName}
-            onChange={(e) => setEventName(e.target.value)}
-          />
+          <Input onChange={(e) => setEventName(e.target.value)} />
         </FormItem>
         <FormItem top="Описание события">
-          <Input />
+          <Input onChange={(e) => setEventDescription(e.target.value)} />
         </FormItem>
         <FormItem top="Дата">
-          <Input />
+          <DateInput
+            value={eventDate}
+            onChange={(e) => setEventDate(e.target.value)}
+            enableTime={true}
+            disablePast={true}
+            closeOnChange={true}
+            disablePickers={false}
+            showNeighboringMonth={false}
+            disableCalendar={false}
+          />
         </FormItem>
-        <FormItem top="Адрес">
-          <Input />
+        <FormItem top="Список приглашенных">
+          <ChipsInput
+            placeholder="Введите адрес и нажмите Enter"
+            selected={eventAddresses}
+            onChange={setEventAddresses}
+          />
         </FormItem>
-        <FormItem top="Количество приглашенных">
-          <Input type="number" />
-        </FormItem>
-        <Checkbox description="Пользователи смогут забрать свои билеты сразу после создания контракта">
-          Опубликовать контракт
+        <Checkbox
+          checked={publish}
+          onChange={(e) => setPublish(e.target.value)}
+          description="Пользователи смогут забрать свои билеты сразу после создания события"
+        >
+          Опубликовать событие
         </Checkbox>
         <FormItem>
-          <Button size="s" stretched>
+          <Button size="s" stretched onClick={submit}>
             Создать событие
           </Button>
         </FormItem>
