@@ -22,7 +22,7 @@ import {
 
 const Customer = ({ id, go }) => (
   <Panel id={"Customer"}>
-    <CustomPanelHeader name={"Content Consumer"} />
+    <CustomPanelHeaderCustomer />
     <PanelHeaderBack onClick={go} data-to="home" />
     <CheckCard/>
   </Panel>
