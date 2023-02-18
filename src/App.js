@@ -13,6 +13,7 @@ import "@vkontakte/vkui/dist/vkui.css";
 import Home from "./panels/Home";
 import Customer from "./panels/Customer";
 import Creator from "./panels/Creator";
+import CreatorSecond from "./panels/CreatorSecond";
 
 const App = () => {
   const [activePanel, setActivePanel] = useState("home");
@@ -40,6 +41,7 @@ const App = () => {
                 <Home id="home" go={go} />
                 <Creator id="creator" go={go} onBackClick={setActivePanel} />
                 <Customer id="customer" go={go} onBackClick={setActivePanel} />
+                <CreatorSecond id="creatorsecond" go={go} onBackClick={setActivePanel}/>
               </View>
             </SplitCol>
           </SplitLayout>

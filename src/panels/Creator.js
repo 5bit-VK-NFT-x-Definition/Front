@@ -71,6 +71,7 @@ const Creator = ({ id, go, onBackClick }) => {
     <Panel id={id}>
       <CustomPanelHeader name="Content Producer" />
       <PanelHeaderBack onClick={go} data-to="home" />
+      <Button onClick={go} data-to="creatorsecond">Библиотека</Button>
       <FormLayout>
         <FormItem top="Название события">
           <Input onChange={(e) => setEventName(e.target.value)} />
