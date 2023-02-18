@@ -21,34 +21,34 @@ import {
 
 const Customer = ({ id, go }) => (
   <Panel id={"Customer"}>
-    <PanelHeader before={<PanelHeaderBack onClick={() => setActiveView('home')} />}></PanelHeader>
     <CustomPanelHeaderCustomer/>
+    <PanelHeaderBack onClick={go} data-to="home" />
     <Group description="NFT">
       <CardGrid size="s">
         <Card>
-          <div style={{ paddingBottom: '50%' }} />
+          <div style={{ paddingBottom: '60%' }} />
           <CellButton onClick={"r"}>Использовать</CellButton>
         </Card>
         <Card>
-          <div style={{ paddingBottom: '50%' }} />
+          <div style={{ paddingBottom: '60%' }} />
           <CellButton onClick={"R"}>Использовать</CellButton>
         </Card>
         <Card>
-          <div style={{ paddingBottom: '50%' }} />
+          <div style={{ paddingBottom: '60%' }} />
           <CellButton onClick={"R"}>Использовать</CellButton>
         </Card>
       </CardGrid>
       <CardGrid size="s">
         <Card>
-          <div style={{ paddingBottom: '50%' }} />
+          <div style={{ paddingBottom: '60%' }} />
           <CellButton onClick={"R"}>Использовать</CellButton>
         </Card>
         <Card>
-          <div style={{ paddingBottom: '50%' }} />
+          <div style={{ paddingBottom: '60%' }} />
           <CellButton onClick={"R"}>Использовать</CellButton>
         </Card>
         <Card>
-          <div style={{ paddingBottom: '50%' }} />
+          <div style={{ paddingBottom: '60%' }} />
           <CellButton onClick={"R"}>Использовать</CellButton>
         </Card>
       </CardGrid>

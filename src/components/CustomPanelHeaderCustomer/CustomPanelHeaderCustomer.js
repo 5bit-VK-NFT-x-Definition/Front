@@ -13,10 +13,11 @@ import {
   PanelHeaderBack,
 } from "@vkontakte/vkui";
 
-const CustomPanelHeaderCustomer = () => {
+const CustomPanelHeaderCustomer = ({ id, go}) => {
   return (
     <panel id="Customer">
-      <PanelHeader before={<PanelHeaderBack onClick={"home"} />}>
+        
+      <PanelHeader>
         VK NFT-билеты Definition
       </PanelHeader>
       
