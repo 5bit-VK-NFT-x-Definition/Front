@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 
 import CustomPanelHeader from "../components/CustomPanelHeader/CustomPanelHeader";
+import CustomPanelHeaderCustomer from "../components/CustomPanelHeaderCustomer/CustomPanelHeaderCustomer";
 
 import {
   Panel,
@@ -33,7 +34,7 @@ const Creator = ({ id, go, onBackClick }) => {
 
   return (
     <Panel id={id}>
-      <CustomPanelHeader name="Content Producer" />
+      <CustomPanelHeaderCustomer name="Content Producer" />
       <PanelHeaderBack onClick={go} data-to="home" />
       <FormLayout>
         <FormItem top="Название события">
