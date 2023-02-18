@@ -5,8 +5,8 @@ import { ethers } from "ethers";
 
 import WhitelistNFT from "../data/WhitelistNFT";
 
-import CustomPanelHeader from "../components/CustomPanelHeader/CustomPanelHeader";
-import CustomPanelHeaderCustomer from "../components/CustomPanelHeaderCustomer/CustomPanelHeaderCustomer";
+import CustomHeader from "../components/CustomHeader/CustomHeader";
+
 
 import {
   Panel,
@@ -69,9 +69,11 @@ const Creator = ({ id, go, onBackClick }) => {
 
   return (
     <Panel id={id}>
-      <CustomPanelHeader name="Content Producer" />
-      <PanelHeaderBack onClick={go} data-to="home" />
-      <Button onClick={go} data-to="creatorsecond">Библиотека</Button>
+      <CustomHeader name="Content Producer" />
+      <div className="headerContainer">
+        <PanelHeaderBack onClick={go} data-to="home" />
+        <Button size="s" onClick={go} data-to="creatorsecond">Библиотека</Button>
+      </div>
       <FormLayout>
         <FormItem top="Название события">
           <Input onChange={(e) => setEventName(e.target.value)} />
