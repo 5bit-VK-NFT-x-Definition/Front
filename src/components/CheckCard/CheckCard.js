@@ -4,7 +4,7 @@ import "./CheckCard.css";
 
 import { Button, Card } from "@vkontakte/vkui";
 
-const CheckCard = ({ event }) => {
+const CheckCard = ({ event, index }) => {
   const onCheckHandler = async () => {
     // Check success
   };

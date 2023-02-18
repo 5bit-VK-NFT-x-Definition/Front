@@ -4,7 +4,7 @@ import "./WatchCard.css";
 
 import { Panel, Button, Div, CardGrid, Card, Group } from "@vkontakte/vkui";
 
-const WatchCard = ({ event }) => {
+const WatchCard = ({ event, index }) => {
   const onWatchHandler = async () => {
     // Check success
   };

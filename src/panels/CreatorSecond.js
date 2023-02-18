@@ -1,18 +1,43 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { Panel, PanelHeaderBack } from "@vkontakte/vkui";
+import axios from "axios";
 
 import CustomPanelHeaderCustomer from "../components/CustomPanelHeaderCustomer/CustomPanelHeaderCustomer";
 import WatchCard from "../components/WatchCard/WatchCard";
 import ShopWindow from "../components/ShopWindow/ShopWindow";
 
-const CreatorSecond = ({ id, go }) => (
-  <Panel id={"CreatorSecond"}>
-    <CustomPanelHeaderCustomer />
-    <PanelHeaderBack onClick={go} data-to="creator" />
-    <ShopWindow object={<WatchCard />} />
-  </Panel>
-);
+const CreatorSecond = ({ id, go }) => {
+  const [events, setEvents] = useState([]);
+  const loadEvents = async () => {
+    try {
+      const response = await axios.post(
+        "https://2cd5-176-52-77-82.ngrok.io/v1/events/getAll",
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      setEvents(response.data.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    loadEvents();
+  }, []);
+
+  return (
+    <Panel id={"CreatorSecond"}>
+      <CustomPanelHeaderCustomer />
+      <PanelHeaderBack onClick={go} data-to="creator" />
+      <ShopWindow object={<WatchCard />} events={events} />
+    </Panel>
+  );
+};
 
 CreatorSecond.propTypes = {
   id: PropTypes.string.isRequired,

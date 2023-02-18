@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 
 import { Panel, Button, Div } from "@vkontakte/vkui";
 import CustomPanelHeader from "../components/CustomPanelHeader/CustomPanelHeader";
 import CheckCard from "../components/CheckCard/CheckCard";
 import ShopWindow from "../components/ShopWindow/ShopWindow";
+import axios from "axios";
 
 import {
   PanelHeaderBack,
@@ -14,11 +15,33 @@ import {
 } from "@vkontakte/vkui";
 
 const Customer = ({ id, go }) => {
+  const [events, setEvents] = useState([]);
+  const loadEvents = async () => {
+    try {
+      const response = await axios.post(
+        "https://2cd5-176-52-77-82.ngrok.io/v1/events/getAll",
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      setEvents(response.data.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    loadEvents();
+  }, []);
+
   return (
     <Panel id={"Customer"}>
       <CustomPanelHeader name={"Content Consumer"} />
       <PanelHeaderBack onClick={go} data-to="home" />
-      <ShopWindow object={<CheckCard />} />
+      <ShopWindow object={<CheckCard />} events={events} />
     </Panel>
   );
 };
