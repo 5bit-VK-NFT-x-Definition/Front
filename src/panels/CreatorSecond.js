@@ -11,8 +11,13 @@ const CreatorSecond = ({ id, go }) => {
   const [events, setEvents] = useState([]);
   const loadEvents = async () => {
     try {
+      const user = (
+        await window.ethereum.request({ method: "eth_requestAccounts" })
+      )[0];
+
       const response = await axios.post(
-        "https://2cd5-176-52-77-82.ngrok.io/v1/events/getAll",
+        "https://2cd5-176-52-77-82.ngrok.io/v1/user/getAllEvents",
+        { owner_adress: user },
         {
           headers: {
             "Content-Type": "application/json",
