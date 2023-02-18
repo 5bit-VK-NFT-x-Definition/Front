@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { ethers } from "ethers";
-import "./ClaimCard.css";
+import "./WatchCard.css";
 
-import WhitelistNFT from "../../data/WhitelistNFT";
+import { Panel, Button, Div, CardGrid, Card, Group } from "@vkontakte/vkui";
 
-import { Button, Div, Card } from "@vkontakte/vkui";
-
-const ClaimCard = ({ address }) => {
-  const onClaimHandler = async () => {};
+const CardLib = () => {
+  const onCheckHandler = async () => {
+    // Check success
+  };
 
   return (
     <Card mode="shadow">
@@ -17,11 +17,11 @@ const ClaimCard = ({ address }) => {
           <label> Address</label>
         </div>
         <div className="bottomright">
-          <Button onClick={onClaimHandler}>Claim</Button>
+          <Button onClick={onCheckHandler}>Claim</Button>
         </div>
       </div>
     </Card>
   );
 };
 
-export default ClaimCard;
+export default CardLib;

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { ethers } from "ethers";
+import "./CheckCard.css";
 
 import { Button, Card } from "@vkontakte/vkui";
 
@@ -9,12 +10,16 @@ const CheckCard = () => {
   };
 
   return (
-    <Card mode="shadow" className="mycard">
-      <label> NFT Event Name</label>
-      <br />
-      <label>Address</label>
-      <br />
-      <Button className="add">Check</Button>
+    <Card mode="shadow">
+      <div className="fathercard">
+        <div className="topright">
+          <label> NFT Event Name</label>
+          <label> Address</label>
+        </div>
+        <div className="bottomright">
+          <Button onClick={onCheckHandler}>Claim</Button>
+        </div>
+      </div>
     </Card>
   );
 };

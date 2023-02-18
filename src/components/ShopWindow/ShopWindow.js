@@ -10,6 +10,7 @@ const ShopWindow = ({ object }) => {
       <CardGrid size="s">
         {object}
         {object}
+        {object}
       </CardGrid>
       <CardGrid size="s">
         {object}
