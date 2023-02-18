@@ -18,6 +18,7 @@ const Home = ({ id, go }) => (
         Content Consumer
       </Button>
     </Div>
+    <hr />
     <ShopWindow />
   </Panel>
 );
