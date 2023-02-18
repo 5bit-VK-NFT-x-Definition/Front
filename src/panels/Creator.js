@@ -69,17 +69,17 @@ const Creator = ({ id, go, onBackClick }) => {
       const response2 = await axios.post(
         "https://2cd5-176-52-77-82.ngrok.io/v1/events/create  ",
         {
-          data: {
-            owner_adress: wallet,
-            contract_id: contract.address,
-            title: eventName,
-            description: eventDescription,
-            date_event: eventDate.toString(),
-            img:
-              "https://2cd5-176-52-77-82.ngrok.io/images/" +
-              (slideIndex + 1) +
-              ".jpeg",
-          },
+          owner_adress: wallet,
+          contract_id: contract.address,
+          title: eventName,
+          description: eventDescription,
+          date_event: eventDate.toString(),
+          img:
+            "https://2cd5-176-52-77-82.ngrok.io/images/" +
+            (slideIndex + 1) +
+            ".jpeg",
+          nft_name: "VKTicket",
+          nft_symbol: "VKT",
           headers: {
             "Content-Type": "application/json",
           },
