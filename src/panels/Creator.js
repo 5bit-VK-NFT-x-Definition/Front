@@ -17,6 +17,7 @@ import {
   Link,
   DateInput,
   ChipsInput,
+  PanelHeaderBack
 } from "@vkontakte/vkui";
 
 const Creator = ({ id, go, onBackClick }) => {
@@ -66,6 +67,7 @@ const Creator = ({ id, go, onBackClick }) => {
   return (
     <Panel id={id}>
       <CustomPanelHeader name="Content Producer" />
+      <PanelHeaderBack onClick={go} data-to="home" />
       <FormLayout>
         <FormItem top="Название события">
           <Input onChange={(e) => setEventName(e.target.value)} />
