@@ -13,14 +13,17 @@ import {
   PanelHeaderBack,
 } from "@vkontakte/vkui";
 
+import WalletConnect from "../WalletConnect/WalletConnect";
+
 const CustomPanelHeaderCustomer = ({ id, go}) => {
   return (
-    <panel id="Customer">
-        
-      <PanelHeader>
-        VK NFT-билеты Definition
-      </PanelHeader>
-      
+    <panel id="Customer">       
+    <PanelHeader>
+      <div className="headerContainer">
+        <label>VK NFT-билеты Definition</label>
+        <WalletConnect />
+      </div>
+    </PanelHeader>
     </panel>
   );
 };
