@@ -4,7 +4,7 @@ import "./ClaimCard.css";
 
 import WhitelistNFT from "../../data/WhitelistNFT";
 
-import { Panel, Button, Div, CardGrid, Card, Group } from "@vkontakte/vkui";
+import { Panel, Button, Div, CardGrid, Card, Group, } from "@vkontakte/vkui";
 
 const ClaimCard = ({ address }) => {
   const onClaimHandler = async () => {

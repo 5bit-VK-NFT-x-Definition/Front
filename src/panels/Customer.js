@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 import { Panel, Button, Div } from "@vkontakte/vkui";
 import CustomPanelHeaderCustomer from "../components/CustomPanelHeaderCustomer/CustomPanelHeaderCustomer";
+import CheckCard from "../components/CheckCard/CheckCard";
 
 import {
   PanelHeader,
@@ -23,36 +24,7 @@ const Customer = ({ id, go }) => (
   <Panel id={"Customer"}>
     <CustomPanelHeaderCustomer/>
     <PanelHeaderBack onClick={go} data-to="home" />
-    <Group description="NFT">
-      <CardGrid size="s">
-        <Card>
-          <div style={{ paddingBottom: '60%' }} />
-          <CellButton onClick={"r"}>Использовать</CellButton>
-        </Card>
-        <Card>
-          <div style={{ paddingBottom: '60%' }} />
-          <CellButton onClick={"R"}>Использовать</CellButton>
-        </Card>
-        <Card>
-          <div style={{ paddingBottom: '60%' }} />
-          <CellButton onClick={"R"}>Использовать</CellButton>
-        </Card>
-      </CardGrid>
-      <CardGrid size="s">
-        <Card>
-          <div style={{ paddingBottom: '60%' }} />
-          <CellButton onClick={"R"}>Использовать</CellButton>
-        </Card>
-        <Card>
-          <div style={{ paddingBottom: '60%' }} />
-          <CellButton onClick={"R"}>Использовать</CellButton>
-        </Card>
-        <Card>
-          <div style={{ paddingBottom: '60%' }} />
-          <CellButton onClick={"R"}>Использовать</CellButton>
-        </Card>
-      </CardGrid>
-    </Group>
+    <CheckCard/>
   </Panel>
 );
 
