@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import { Panel, Button, Div } from "@vkontakte/vkui";
-import CustomPanelHeader from "../components/CustomPanelHeaderCustomer/CustomPanelHeaderCustomer";
 
 import {
   PanelHeader,
@@ -11,12 +10,28 @@ import {
   Group,
   Cell,
   Avatar,
+  CardGrid,
+  Card
 } from "@vkontakte/vkui";
+import CustomPanelHeaderCustomer from "../components/CustomPanelHeaderCustomer/CustomPanelHeaderCustomer";
 
 const Customer = ({ id, go }) => (
   <Panel id={"Customer"}>
     <PanelHeader before={<PanelHeaderBack onClick={() => setActiveView('home')} />}></PanelHeader>
-    <CustomPanelHeader />
+    <CustomPanelHeaderCustomer/>
+    <Group description="Внутри NFT">
+      <CardGrid size="s">
+        <Card>
+          <div style={{ paddingBottom: '92%' }} />
+        </Card>
+        <Card>
+          <div style={{ paddingBottom: '92%' }} />
+        </Card>
+        <Card>
+          <div style={{ paddingBottom: '92%' }} />
+        </Card>
+      </CardGrid>
+    </Group>
   </Panel>
 );
 
