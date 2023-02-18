@@ -16,9 +16,7 @@ import {
 const CustomPanelHeader = () => {
   return (
     <panel id="Customer">
-      <PanelHeader>
-        {" "}
-        <PanelHeaderBack />
+      <PanelHeader before={<PanelHeaderBack onClick={"home"} />}>
         VK NFT-билеты Definition
       </PanelHeader>
     </panel>
