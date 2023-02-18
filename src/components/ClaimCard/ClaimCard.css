@@ -1,4 +1,10 @@
 .mycard {
   height: 96px;
+  display: flex;
+  flex-direction: column;
   background-color: aquamarine;
+}
+
+.add {
+  margin-left: 8px !important;
 }

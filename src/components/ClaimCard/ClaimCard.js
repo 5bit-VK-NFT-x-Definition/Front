@@ -19,8 +19,12 @@ const ClaimCard = ({ address }) => {
   return (
     <Card mode="shadow" className="mycard">
       <label>NFT Event Name</label>
+      <br />
       <label>Address</label>
-      <Button onClick={onClaimHandler}>Claim</Button>
+      <br />
+      <Button onClick={onClaimHandler} className="add">
+        Claim
+      </Button>
     </Card>
   );
 };
