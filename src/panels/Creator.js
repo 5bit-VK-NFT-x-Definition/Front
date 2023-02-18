@@ -69,7 +69,7 @@ const Creator = ({ id, go, onBackClick }) => {
 
   return (
     <Panel id={id}>
-      <CustomPanelHeaderCustomer name="Content Producer" />
+      <CustomPanelHeader name="Content Producer" />
       <PanelHeaderBack onClick={go} data-to="home" />
       <FormLayout>
         <FormItem top="Название события">
@@ -80,8 +80,8 @@ const Creator = ({ id, go, onBackClick }) => {
         </FormItem>
         <FormItem top="Дата">
           <DateInput
+            onChange={setEventDate}
             value={eventDate}
-            onChange={(e) => setEventDate(e.target.value)}
             enableTime={true}
             disablePast={true}
             closeOnChange={true}
@@ -98,8 +98,7 @@ const Creator = ({ id, go, onBackClick }) => {
           />
         </FormItem>
         <Checkbox
-          checked={publish}
-          onChange={(e) => setPublish(e.target.value)}
+          onChange={(e) => setPublish(!publish)}
           description="Пользователи смогут забрать свои билеты сразу после создания события"
         >
           Опубликовать событие

@@ -13,11 +13,11 @@ import {
 } from "@vkontakte/vkui";
 import WalletConnect from "../WalletConnect/WalletConnect";
 
-const CustomPanelHeader = () => {
+const CustomPanelHeader = ({ name }) => {
   return (
     <PanelHeader>
       <div className="headerContainer">
-        <label>Home</label>
+        <label>{name}</label>
         <WalletConnect />
       </div>
     </PanelHeader>
