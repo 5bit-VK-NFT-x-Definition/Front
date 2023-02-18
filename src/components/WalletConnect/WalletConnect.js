@@ -1,10 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./WalletConnect.css";
 
 import { Button } from "@vkontakte/vkui";
 
 const WalletConnect = () => {
   const [connButtonText, setConnButtonText] = useState("Connect Wallet");
+
+  useEffect(() => {
+    connectWalletHandler();
+  }, []);
 
   const connectWalletHandler = () => {
     if (window.ethereum && window.ethereum.isMetaMask) {
