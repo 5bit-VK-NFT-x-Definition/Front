@@ -38,8 +38,8 @@ const App = () => {
             <SplitCol>
               <View activePanel={activePanel}>
                 <Home id="home" go={go} />
-                <Creator id="creator" go={go} />
-                <Customer id="customer" go={go} />
+                <Creator id="creator" go={go} onBackClick={setActivePanel} />
+                <Customer id="customer" go={go} onBackClick={setActivePanel} />
               </View>
             </SplitCol>
           </SplitLayout>

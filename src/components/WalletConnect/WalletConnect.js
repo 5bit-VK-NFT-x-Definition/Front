@@ -19,11 +19,10 @@ const WalletConnect = () => {
           );
         })
         .catch((error) => {
-          setErrorMessage(error.message);
+          console.error(error);
         });
     } else {
       console.log("Need to install MetaMask");
-      setErrorMessage("Please install MetaMask browser extension to interact");
     }
   };
 
