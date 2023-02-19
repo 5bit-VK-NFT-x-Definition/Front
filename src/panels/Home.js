@@ -8,6 +8,8 @@ import ShopWindow from "../components/ShopWindow/ShopWindow";
 import ClaimCard from "../components/ClaimCard/ClaimCard";
 import axios from "axios";
 
+
+
 const Home = ({ id, go }) => {
   const [events, setEvents] = useState([]);
 
@@ -34,11 +36,13 @@ const Home = ({ id, go }) => {
 
   return (
     <Panel id={id}>
-      <CustomHeader name="Home" />
+      <CustomHeader name="Главная" />
+      
+      <label>Главная</label>
 
       <Div className="homechoices">
         <Button stretched onClick={go} data-to="creator">
-          Content Producer
+          Создание билета
         </Button>
         <Button
           stretched
@@ -46,7 +50,7 @@ const Home = ({ id, go }) => {
           onClick={go}
           data-to="customer"
         >
-          Content Consumer
+          Проверка билета
         </Button>
       </Div>
       <hr />

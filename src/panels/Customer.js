@@ -14,6 +14,7 @@ import {
   ModalDismissButton,
 } from "@vkontakte/vkui";
 
+
 const Customer = ({ id, go }) => {
   const [events, setEvents] = useState([]);
   const loadEvents = async () => {
@@ -44,7 +45,9 @@ const Customer = ({ id, go }) => {
 
   return (
     <Panel id={"Customer"}>
-      <CustomHeader name="Content Consumer" />
+      <CustomHeader name="Проверка билета" />
+      
+      <label>Проверка билета</label>
       <PanelHeaderBack onClick={go} data-to="home" />
       <ShopWindow object={<CheckCard />} events={events} />
     </Panel>
