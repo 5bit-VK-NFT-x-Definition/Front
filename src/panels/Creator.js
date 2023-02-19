@@ -32,7 +32,7 @@ const Creator = ({ id, go, onBackClick }) => {
   const submit = async () => {
     try {
       const response = await axios.post(
-        "https://2cd5-176-52-77-82.ngrok.io/v1/events/getAll",
+        "https://29ab-176-52-77-82.ngrok.io/v1/events/getAll",
         {
           headers: {
             "Content-Type": "application/json",
@@ -55,7 +55,7 @@ const Creator = ({ id, go, onBackClick }) => {
         "VKTicket",
         "VKT",
         total + 1,
-        "https://2cd5-176-52-77-82.ngrok.io/v1",
+        "https://29ab-176-52-77-82.ngrok.io/v1",
         eventAddresses.map((x) => x.value),
         publish
       );
@@ -67,7 +67,7 @@ const Creator = ({ id, go, onBackClick }) => {
       )[0];
 
       const response2 = await axios.post(
-        "https://2cd5-176-52-77-82.ngrok.io/v1/events/create  ",
+        "https://29ab-176-52-77-82.ngrok.io/v1/events/create  ",
         {
           owner_adress: wallet,
           contract_id: contract.address,
@@ -75,7 +75,7 @@ const Creator = ({ id, go, onBackClick }) => {
           description: eventDescription,
           date_event: eventDate.toString(),
           img:
-            "https://2cd5-176-52-77-82.ngrok.io/images/" +
+            "https://29ab-176-52-77-82.ngrok.io/images/" +
             (slideIndex + 1) +
             ".jpeg",
           nft_name: "VKTicket",
@@ -141,15 +141,15 @@ const Creator = ({ id, go, onBackClick }) => {
           showArrows={true}
         >
           <img
-            src="https://2cd5-176-52-77-82.ngrok.io/images/1.jpeg"
+            src="https://29ab-176-52-77-82.ngrok.io/images/1.jpeg"
             height="300"
           />
           <img
-            src="https://2cd5-176-52-77-82.ngrok.io/images/2.jpeg"
+            src="https://29ab-176-52-77-82.ngrok.io/images/2.jpeg"
             height="300"
           />
           <img
-            src="https://2cd5-176-52-77-82.ngrok.io/images/3.jpeg"
+            src="https://29ab-176-52-77-82.ngrok.io/images/3.jpeg"
             height="300"
           />
         </Gallery>

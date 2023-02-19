@@ -7,7 +7,10 @@ import axios from "axios";
 import { Button, Card } from "@vkontakte/vkui";
 
 const ClaimCard = ({ event, index }) => {
+  const [loading, setLoading] = useState(false);
+
   const onClaimHandler = async () => {
+    setLoading(true);
     try {
       const provider = new ethers.providers.Web3Provider(window.ethereum);
       const signer = provider.getSigner();
@@ -22,7 +25,7 @@ const ClaimCard = ({ event, index }) => {
       const tokenId = events[0].args.tokenId.toNumber();
       if (txReceipt.status == 1) {
         const response = await axios.post(
-          "https://2cd5-176-52-77-82.ngrok.io/v1/nfts/create",
+          "https://29ab-176-52-77-82.ngrok.io/v1/nfts/create",
           {
             owner_wallet: await signer.getAddress(),
             event_id: event.id.toString(),
@@ -44,8 +47,10 @@ const ClaimCard = ({ event, index }) => {
         // reverted
       }
     } catch (error) {
-      console.error(error);
+      // console.error(error);
+      console.log("Error while claim");
     }
+    setLoading(false);
   };
 
   return (
@@ -67,7 +72,9 @@ const ClaimCard = ({ event, index }) => {
           <label> {event.description}</label>
         </div>
         <div className="bottomright">
-          <Button onClick={onClaimHandler}>Claim</Button>
+          <Button onClick={onClaimHandler} loading={loading}>
+            Claim
+          </Button>
         </div>
       </div>
     </Card>

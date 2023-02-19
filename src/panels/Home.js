@@ -14,7 +14,7 @@ const Home = ({ id, go }) => {
   const loadEvents = async () => {
     try {
       const response = await axios.post(
-        "https://2cd5-176-52-77-82.ngrok.io/v1/events/getAll",
+        "https://29ab-176-52-77-82.ngrok.io/v1/events/getAll",
         {
           headers: {
             "Content-Type": "application/json",
@@ -24,7 +24,7 @@ const Home = ({ id, go }) => {
 
       setEvents(response.data.data);
     } catch (error) {
-      console.error(error);
+      // console.error(error);
     }
   };
 

@@ -16,7 +16,7 @@ const CreatorSecond = ({ id, go }) => {
       )[0];
 
       const response = await axios.post(
-        "https://2cd5-176-52-77-82.ngrok.io/v1/user/getAllEvents",
+        "https://29ab-176-52-77-82.ngrok.io/v1/user/getAllEvents",
         { owner_adress: user },
         {
           headers: {
@@ -27,7 +27,8 @@ const CreatorSecond = ({ id, go }) => {
 
       setEvents(response.data.data);
     } catch (error) {
-      console.error(error);
+      // console.error(error);
+      console.log(error);
     }
   };
 

@@ -5,8 +5,16 @@ import "./CheckCard.css";
 import { Button, Card } from "@vkontakte/vkui";
 
 const CheckCard = ({ event, index }) => {
+  const [loading, setLoading] = useState(false);
+
   const onCheckHandler = async () => {
-    // Check success
+    setLoading(true);
+    try {
+    } catch (error) {
+      console.error(error);
+    }
+
+    setLoading(false);
   };
 
   return (
@@ -28,7 +36,9 @@ const CheckCard = ({ event, index }) => {
           <label> {event.description}</label>
         </div>
         <div className="bottomright">
-          <Button onClick={onCheckHandler}>Claim</Button>
+          <Button onClick={onCheckHandler} loading={loading}>
+            Check
+          </Button>
         </div>
       </div>
     </Card>
