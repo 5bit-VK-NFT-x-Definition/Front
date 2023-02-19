@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import "./Home.css";
 
 import { Panel, Button, Div } from "@vkontakte/vkui";
-import CustomPanelHeader from "../components/CustomPanelHeader/CustomPanelHeader";
+import CustomHeader from "../components/CustomHeader/CustomHeader";
 import ShopWindow from "../components/ShopWindow/ShopWindow";
 import ClaimCard from "../components/ClaimCard/ClaimCard";
 import axios from "axios";
@@ -34,7 +34,7 @@ const Home = ({ id, go }) => {
 
   return (
     <Panel id={id}>
-      <CustomPanelHeader name={"Home"} />
+      <CustomHeader name="Home" />
 
       <Div className="homechoices">
         <Button stretched onClick={go} data-to="creator">

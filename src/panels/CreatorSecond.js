@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Panel, PanelHeaderBack } from "@vkontakte/vkui";
 import axios from "axios";
 
-import CustomPanelHeaderCustomer from "../components/CustomPanelHeaderCustomer/CustomPanelHeaderCustomer";
+import CustomHeader from "../components/CustomHeader/CustomHeader";
 import WatchCard from "../components/WatchCard/WatchCard";
 import ShopWindow from "../components/ShopWindow/ShopWindow";
 
@@ -38,7 +38,7 @@ const CreatorSecond = ({ id, go }) => {
 
   return (
     <Panel id={"CreatorSecond"}>
-      <CustomPanelHeaderCustomer />
+      <CustomHeader name="Library" />
       <PanelHeaderBack onClick={go} data-to="creator" />
       <ShopWindow object={<WatchCard />} events={events} />
     </Panel>
