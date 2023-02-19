@@ -37,7 +37,7 @@ const CheckCard = ({ event, index }) => {
         </div>
         <div className="bottomright">
           <Button onClick={onCheckHandler} loading={loading}>
-            Check
+            Проверить
           </Button>
         </div>
       </div>

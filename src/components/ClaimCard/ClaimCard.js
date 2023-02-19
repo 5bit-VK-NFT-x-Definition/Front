@@ -73,7 +73,7 @@ const ClaimCard = ({ event, index }) => {
         </div>
         <div className="bottomright">
           <Button onClick={onClaimHandler} loading={loading}>
-            Claim
+            Забрать
           </Button>
         </div>
       </div>
