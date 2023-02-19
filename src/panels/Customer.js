@@ -24,7 +24,7 @@ const Customer = ({ id, go }) => {
       )[0];
 
       const response = await axios.post(
-        `https://29ab-176-52-77-82.ngrok.io/v1/...`,
+        `https://29ab-176-52-77-82.ngrok.io/v1/user/getAllNfts`,
         { owner_adress: user },
         {
           headers: {
@@ -34,6 +34,7 @@ const Customer = ({ id, go }) => {
       );
 
       console.log(response);
+      setEvents(response.data.data);
     } catch (error) {
       // console.error(error);
     }
