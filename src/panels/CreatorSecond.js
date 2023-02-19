@@ -7,6 +7,7 @@ import CustomHeader from "../components/CustomHeader/CustomHeader";
 import WatchCard from "../components/WatchCard/WatchCard";
 import ShopWindow from "../components/ShopWindow/ShopWindow";
 
+
 const CreatorSecond = ({ id, go }) => {
   const [events, setEvents] = useState([]);
   const loadEvents = async () => {
@@ -38,7 +39,8 @@ const CreatorSecond = ({ id, go }) => {
 
   return (
     <Panel id={"CreatorSecond"}>
-      <CustomHeader name="Library" />
+      <CustomHeader name="Библиотека" />
+      <label>Библиотека</label>
       <PanelHeaderBack onClick={go} data-to="creator" />
       <ShopWindow object={<WatchCard />} events={events} />
     </Panel>

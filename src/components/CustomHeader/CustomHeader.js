@@ -16,8 +16,7 @@ import WalletConnect from "../WalletConnect/WalletConnect";
 const CustomHeader = ({ name, id, go }) => {
   return (
     <PanelHeader>
-      <div className="headerContainer">
-        <label>{name}</label>
+      <div className="header">
         <WalletConnect />
       </div>
     </PanelHeader>

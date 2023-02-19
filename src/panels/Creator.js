@@ -20,6 +20,7 @@ import {
   Gallery,
 } from "@vkontakte/vkui";
 
+
 const Creator = ({ id, go, onBackClick }) => {
   const [eventName, setEventName] = useState("");
   const [eventDescription, setEventDescription] = useState("");
@@ -92,12 +93,11 @@ const Creator = ({ id, go, onBackClick }) => {
 
   return (
     <Panel id={id}>
-      <CustomHeader name="Content Producer" />
+      <CustomHeader name="Создание билета" />
       <div className="headerContainer">
         <PanelHeaderBack onClick={go} data-to="home" />
-        <Button size="s" onClick={go} data-to="creatorsecond">
-          Library
-        </Button>
+        <label>Создание билета</label>
+        <Button size="s" onClick={go} data-to="creatorsecond">Библиотека</Button>
       </div>
       <FormLayout>
         <FormItem top="Название события">
