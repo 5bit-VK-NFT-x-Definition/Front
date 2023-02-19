@@ -7,6 +7,10 @@ import { Button, Card } from "@vkontakte/vkui";
 const CheckCard = ({ event, index }) => {
   const [loading, setLoading] = useState(false);
 
+  const [link, setLink] = useState(
+    "https://goerli.etherscan.io/address/" + event.contract_id
+  );
+
   const onCheckHandler = async () => {
     setLoading(true);
     try {
@@ -36,7 +40,12 @@ const CheckCard = ({ event, index }) => {
           <label> {event.description}</label>
         </div>
         <div className="bottomright">
-          <Button onClick={onCheckHandler} loading={loading}>
+          <Button
+            onClick={onCheckHandler}
+            loading={loading}
+            href={link}
+            target="_blank"
+          >
             Проверить
           </Button>
         </div>
