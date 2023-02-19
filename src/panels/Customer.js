@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 
 import { Panel, Button, Div } from "@vkontakte/vkui";
-import CustomPanelHeader from "../components/CustomPanelHeader/CustomPanelHeader";
+import CustomHeader from "../components/CustomHeader/CustomHeader";
 import CheckCard from "../components/CheckCard/CheckCard";
 import ShopWindow from "../components/ShopWindow/ShopWindow";
 import axios from "axios";
@@ -44,7 +44,7 @@ const Customer = ({ id, go }) => {
 
   return (
     <Panel id={"Customer"}>
-      <CustomPanelHeader name={"Content Consumer"} />
+      <CustomHeader name="Content Consumer" />
       <PanelHeaderBack onClick={go} data-to="home" />
       <ShopWindow object={<CheckCard />} events={events} />
     </Panel>

@@ -96,7 +96,7 @@ const Creator = ({ id, go, onBackClick }) => {
       <div className="headerContainer">
         <PanelHeaderBack onClick={go} data-to="home" />
         <Button size="s" onClick={go} data-to="creatorsecond">
-          Библиотека
+          Library
         </Button>
       </div>
       <FormLayout>
